@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/dboatengg/js-webpack-starter/issues"
   },
-  "homepage": "https://github.com/dboatengg/js-webpack-starter#readme"
+  "homepage": "https://github.com/dboatengg/js-webpack-starter#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.6.0"
+  }
 }
