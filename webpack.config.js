@@ -20,4 +20,14 @@ module.exports = {
       filename: 'index.html',
     }),
   ],
+
+  //configuring css loaders
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
 };
