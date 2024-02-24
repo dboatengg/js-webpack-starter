@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BundleAnalyzerPlugin =
-  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const webpack = require('webpack');
 
 module.exports = {
   //Entry point
@@ -16,15 +15,16 @@ module.exports = {
   },
 
   //webpack-dev-server
+  mode: 'development',
   devServer: {
     static: {
-      directory: path.resolve(__dirname, 'dist'),
+      directory: path.join(__dirname, 'dist'),
     },
-    port: 3000,
-    open: true,
-    hot: true,
-    compress: true,
     historyApiFallback: true,
+    open: true,
+    compress: true,
+    hot: true,
+    port: 8080,
   },
 
   //Plugins
@@ -33,7 +33,7 @@ module.exports = {
       template: 'src/template.html',
       filename: 'index.html',
     }),
-    new BundleAnalyzerPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
   ],
 
   //configuring css loaders
